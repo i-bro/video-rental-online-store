@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="VideoRentalOnlineStore.DataAccess/VideoRentalOnlineStore.DataAccess.csproj" />
+  <Project Path="VideoRentalOnlineStore.Model/VideoRentalOnlineStore.Model.csproj" />
+  <Project Path="VideoRentalOnlineStore.Models/VideoRentalOnlineStore.DomainModels.csproj" />
+  <Project Path="VideoRentalOnlineStore.Services/VideoRentalOnlineStore.Services.csproj" />
+  <Project Path="VideoRentalOnlineStore/VideoRentalOnlineStore.csproj" />
+</Solution>

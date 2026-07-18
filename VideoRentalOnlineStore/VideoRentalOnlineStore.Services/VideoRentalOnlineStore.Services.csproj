@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VideoRentalOnlineStore.DataAccess\VideoRentalOnlineStore.DataAccess.csproj" />
+    <ProjectReference Include="..\VideoRentalOnlineStore.Models\VideoRentalOnlineStore.DomainModels.csproj" />
+    <ProjectReference Include="..\VideoRentalOnlineStore.Model\VideoRentalOnlineStore.Model.csproj" />
+  </ItemGroup>
+
+</Project>
