@@ -1,3 +1,6 @@
+using VideoRentalOnlineStore.DataAccess.Implementation;
+using VideoRentalOnlineStore.DataAccess.Interfaces;
+using VideoRentalOnlineStore.DomainModels.Models;
 using VideoRentalOnlineStore.Services.Implementation;
 using VideoRentalOnlineStore.Services.Interfaces;
 
@@ -7,8 +10,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
+
+builder.Services.AddScoped<IRepository<User>, UserRepository>();
+builder.Services.AddScoped<IRepository<Movie>, MovieRepository>();
+builder.Services.AddScoped<IRepository<Rental>, RentalRepository>();
+builder.Services.AddScoped<IRepository<Cast>, CastRepository>();
+builder.Services.AddScoped<ICastRepository, CastRepository>();
+
+builder.Services.AddSession();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -20,6 +33,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 

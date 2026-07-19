@@ -1,0 +1,17 @@
+﻿@model MovieDetailsViewModel
+
+<h2>@Model.Title</h2>
+<p>Genre: @Model.Genre</p>
+<p>Language: @Model.Language</p>
+<p>Relise date: @Model.ReleaseDate</p>
+<p>Duration: @Model.Length</p>
+<p>Recomended to watch only if you are @Model.AgeRestriction years old and above</p>
+<p>On stock: @Model.Quantity</p>
+
+<h4>Cast</h4>
+<ul>
+    @foreach(var castMemders in Model.Cast)
+    {
+        <li>@castMemders.Name - @castMemders.Part</li>
+    }
+</ul>

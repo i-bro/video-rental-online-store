@@ -9,6 +9,7 @@
   
 
   <ItemGroup>
+    <ProjectReference Include="..\VideoRentalOnlineStore.Mapper\VideoRentalOnlineStore.Mapper.csproj" />
     <ProjectReference Include="..\VideoRentalOnlineStore.Services\VideoRentalOnlineStore.Services.csproj" />
   </ItemGroup>
 

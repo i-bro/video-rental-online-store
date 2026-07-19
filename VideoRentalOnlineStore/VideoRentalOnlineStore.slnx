@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="VideoRentalOnlineStore.DataAccess/VideoRentalOnlineStore.DataAccess.csproj" />
+  <Project Path="VideoRentalOnlineStore.Mapper/VideoRentalOnlineStore.Mapper.csproj" Id="edc2badf-e8e8-4dff-9711-42594211e587" />
   <Project Path="VideoRentalOnlineStore.Model/VideoRentalOnlineStore.Model.csproj" />
   <Project Path="VideoRentalOnlineStore.Models/VideoRentalOnlineStore.DomainModels.csproj" />
   <Project Path="VideoRentalOnlineStore.Services/VideoRentalOnlineStore.Services.csproj" />
