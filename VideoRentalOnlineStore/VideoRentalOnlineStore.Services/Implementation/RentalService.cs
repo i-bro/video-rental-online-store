@@ -16,6 +16,12 @@ namespace VideoRentalOnlineStore.Services.Implementation
             _movieService = movieService;
             _rentalRepositoryCRUD = rentalRepositoryCRUD;
         }
+
+        public List<Rental> GetRentalByUserId(int userId)
+        {
+            return _rentalRepository.GetByUserId(userId);
+        }
+
         public void RentMovie(int movieId, int userId)
         {
             var movie = _movieService.GetById(movieId);
@@ -48,5 +54,6 @@ namespace VideoRentalOnlineStore.Services.Implementation
 
             _movieService.IncreaseQuantity(movieId);
         }
+
     }
 }

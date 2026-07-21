@@ -1,0 +1,7 @@
+﻿@model List<RentedMovieViewModel>
+
+    <h2>My rented Movies</h2>
+@foreach(var rental in Model)
+{
+    <p>@rental.Title - rented on @rental.RentedOn.ToShortDateString()</p>
+}

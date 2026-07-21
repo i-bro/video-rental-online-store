@@ -43,6 +43,11 @@ namespace VideoRentalOnlineStore.DataAccess.Implementation
             return StaticDb.Rentals.FirstOrDefault(u => u.Id == id);
         }
 
+        public List<Rental> GetByUserId(int userId)
+        {
+            return StaticDb.Rentals.Where(r => r.UserId == userId).ToList();
+        }
+
         public void Update(Rental entity)
         {
             if (entity == null)

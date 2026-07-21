@@ -102,5 +102,23 @@ namespace VideoRentalOnlineStore.Controllers
 
             return RedirectToAction("MovieDetails", new {id = movieId});
         }
+
+        public IActionResult MyRentals()
+        {
+            var cardNumber = HttpContext.Session.GetString("CardNumber");
+            if (string.IsNullOrEmpty(cardNumber))
+            {
+                return RedirectToAction("Login");
+            }
+
+            var user = _userService.GetByCardNumber(cardNumber);
+            var rentals = _rentalService.GetRentalByUserId(user.Id);
+
+            var rentedMovies = rentals
+                .Select(r => r.MapRentedModel(_movieService.GetById(r.MovieId)))
+                .ToList();
+
+            return View(rentedMovies);
+        }
     }
 }
