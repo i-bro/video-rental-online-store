@@ -30,5 +30,29 @@ namespace VideoRentalOnlineStore.Services.Implementation
         {
             return _castRepository.GetByMovieId(movieId);
         }
+
+        public void DecreaseQuantity(int movieId)
+        {
+            var movie = _movieRepository.GetById(movieId);
+            if(movie == null || movie.Quantity <= 0)
+            {
+                throw new Exception("No movies available");
+            }
+
+            movie.Quantity -= 1;
+            _movieRepository.Update(movie);
+        }
+
+        public void IncreaseQuantity(int movieId)
+        {
+            var movie = _movieRepository.GetById(movieId);
+            if(movie == null)
+            {
+                throw new Exception("Movie not found");
+            }
+
+            movie.Quantity += 1;
+            _movieRepository.Update(movie);
+        }
     }
 }

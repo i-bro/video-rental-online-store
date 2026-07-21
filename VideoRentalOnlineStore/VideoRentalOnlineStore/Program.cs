@@ -11,12 +11,14 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IRentalService, RentalService>();
 
 builder.Services.AddScoped<IRepository<User>, UserRepository>();
 builder.Services.AddScoped<IRepository<Movie>, MovieRepository>();
 builder.Services.AddScoped<IRepository<Rental>, RentalRepository>();
 builder.Services.AddScoped<IRepository<Cast>, CastRepository>();
 builder.Services.AddScoped<ICastRepository, CastRepository>();
+builder.Services.AddScoped<IRentalRepository, RentalRepository>();
 
 builder.Services.AddSession();
 

@@ -3,7 +3,7 @@ using VideoRentalOnlineStore.DomainModels.Models;
 
 namespace VideoRentalOnlineStore.DataAccess.Implementation
 {
-    public class RentalRepository : IRepository<Rental>
+    public class RentalRepository : IRepository<Rental>, IRentalRepository
     {
         public void Create(Rental entity)
         {
@@ -26,6 +26,11 @@ namespace VideoRentalOnlineStore.DataAccess.Implementation
             {
                 throw new Exception("User cannot be found");
             }
+        }
+
+        public Rental GetActiveRentalByMovieId(int movieId)
+        {
+            return StaticDb.Rentals.FirstOrDefault(r => r.MovieId == movieId && r.ReturnedOn == null);
         }
 
         public List<Rental> GetAll()

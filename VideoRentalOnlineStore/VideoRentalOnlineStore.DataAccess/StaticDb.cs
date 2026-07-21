@@ -34,11 +34,11 @@ namespace VideoRentalOnlineStore.DataAccess
         {
             Movies = new List<Movie>()
             {
-                new Movie { Id = 1, Title = "Edge of Tomorrow Dawn", Genre = Genre.Action, Language = Language.English, IsAvailable = true, ReleaseDate = new DateTime(2019, 7, 12), Length = new TimeSpan(2, 5, 0), AgeRestriction = 13, Quantity = 4 },
-            new Movie { Id = 2, Title = "Laughing Matters", Genre = Genre.Comedy, Language = Language.English, IsAvailable = true, ReleaseDate = new DateTime(2021, 3, 5), Length = new TimeSpan(1, 38, 0), AgeRestriction = 0, Quantity = 6 },
-            new Movie { Id = 3, Title = "The Silent House", Genre = Genre.Horror, Language = Language.English, IsAvailable = false, ReleaseDate = new DateTime(2018, 10, 26), Length = new TimeSpan(1, 30, 0), AgeRestriction = 17, Quantity = 0 },
-            new Movie { Id = 4, Title = "La Vie en Rouge", Genre = Genre.Action, Language = Language.French, IsAvailable = true, ReleaseDate = new DateTime(2020, 9, 14), Length = new TimeSpan(1, 55, 0), AgeRestriction = 13, Quantity = 3 },
-            new Movie { Id = 5, Title = "El Camino Oculto", Genre = Genre.Horror, Language = Language.Spanish, IsAvailable = true, ReleaseDate = new DateTime(2022, 2, 1), Length = new TimeSpan(1, 47, 0), AgeRestriction = 17, Quantity = 2 }
+                new Movie { Id = 1, Title = "Edge of Tomorrow Dawn", Genre = Genre.Action, Language = Language.English, ReleaseDate = new DateTime(2019, 7, 12), Length = new TimeSpan(2, 5, 0), AgeRestriction = 13, Quantity = 4 },
+            new Movie { Id = 2, Title = "Laughing Matters", Genre = Genre.Comedy, Language = Language.English, ReleaseDate = new DateTime(2021, 3, 5), Length = new TimeSpan(1, 38, 0), AgeRestriction = 0, Quantity = 6 },
+            new Movie { Id = 3, Title = "The Silent House", Genre = Genre.Horror, Language = Language.English, ReleaseDate = new DateTime(2018, 10, 26), Length = new TimeSpan(1, 30, 0), AgeRestriction = 17, Quantity = 0 },
+            new Movie { Id = 4, Title = "La Vie en Rouge", Genre = Genre.Action, Language = Language.French, ReleaseDate = new DateTime(2020, 9, 14), Length = new TimeSpan(1, 55, 0), AgeRestriction = 13, Quantity = 3 },
+            new Movie { Id = 5, Title = "El Camino Oculto", Genre = Genre.Horror, Language = Language.Spanish, ReleaseDate = new DateTime(2022, 2, 1), Length = new TimeSpan(1, 47, 0), AgeRestriction = 17, Quantity = 2 }
             };
         }
 

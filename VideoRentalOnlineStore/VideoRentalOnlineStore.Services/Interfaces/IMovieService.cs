@@ -7,5 +7,7 @@ namespace VideoRentalOnlineStore.Services.Interfaces
         List<Movie> GetAll();
         Movie GetById(int id);
         public List<Cast> GetCastByMovieId(int movieId);
+        public void DecreaseQuantity(int movieId);
+        public void IncreaseQuantity(int movieId);
     }
 }

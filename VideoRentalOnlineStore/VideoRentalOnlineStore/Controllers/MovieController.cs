@@ -10,11 +10,13 @@ namespace VideoRentalOnlineStore.Controllers
     {
         private readonly IUserService _userService;
         private readonly IMovieService _movieService;
+        private readonly IRentalService _rentalService;
 
-        public MovieController(IUserService userService, IMovieService movieService)
+        public MovieController(IUserService userService, IMovieService movieService, IRentalService rentalServise)
         {
             _userService = userService;
             _movieService = movieService;
+            _rentalService = rentalServise;
         }
 
         [HttpGet("login")]
@@ -84,6 +86,21 @@ namespace VideoRentalOnlineStore.Controllers
             movieDetails.Cast = castMembers.Select(c => c.MapCast()).ToList();
 
             return View(movieDetails);
+        }
+
+        [HttpPost]
+        public IActionResult Rent(int movieId)
+        {
+            var cardNumber = HttpContext.Session.GetString("CardNumber");
+            if (string.IsNullOrEmpty(cardNumber))
+            {
+                return RedirectToAction("Login");
+            }
+            var user = _userService.GetByCardNumber(cardNumber);
+
+            _rentalService.RentMovie(movieId, user.Id);
+
+            return RedirectToAction("MovieDetails", new {id = movieId});
         }
     }
 }

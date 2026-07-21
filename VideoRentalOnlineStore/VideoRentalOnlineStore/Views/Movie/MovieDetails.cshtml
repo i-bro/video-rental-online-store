@@ -8,6 +8,17 @@
 <p>Recomended to watch only if you are @Model.AgeRestriction years old and above</p>
 <p>On stock: @Model.Quantity</p>
 
+@if (Model.IsAvailable)
+{
+    <form asp-action="Rent" asp-route-movieId="@Model.Id" method="post">
+        <button type="submit" class="btn btn-success">Rent</button>
+    </form>
+}
+else
+{
+    <p class="text-danger">Not available</p>
+}
+
 <h4>Cast</h4>
 <ul>
     @foreach(var castMemders in Model.Cast)
