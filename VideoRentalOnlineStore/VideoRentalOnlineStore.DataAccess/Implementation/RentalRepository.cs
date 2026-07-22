@@ -45,7 +45,7 @@ namespace VideoRentalOnlineStore.DataAccess.Implementation
 
         public List<Rental> GetByUserId(int userId)
         {
-            return StaticDb.Rentals.Where(r => r.UserId == userId).ToList();
+            return StaticDb.Rentals.Where(r => r.UserId == userId && r.ReturnedOn == null).ToList();
         }
 
         public void Update(Rental entity)

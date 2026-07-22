@@ -120,5 +120,19 @@ namespace VideoRentalOnlineStore.Controllers
 
             return View(rentedMovies);
         }
+
+        [HttpPost]
+        public IActionResult Return(int movieId)
+        {
+            var cardNumber = HttpContext.Session.GetString("CardNumber");
+            if (string.IsNullOrEmpty(cardNumber))
+            {
+                return RedirectToAction("Login");
+            }
+
+            _rentalService.ReturnMovie(movieId);
+
+            return RedirectToAction("MyRentals");
+        }
     }
 }

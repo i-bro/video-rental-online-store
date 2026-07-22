@@ -4,4 +4,7 @@
 @foreach(var rental in Model)
 {
     <p>@rental.Title - rented on @rental.RentedOn.ToShortDateString()</p>
+    <form asp-action="Return" asp-route-movieId="@rental.MovieId" method="post">
+        <button type="submit" class="btn btn-warning">Return</button>
+    </form>
 }
