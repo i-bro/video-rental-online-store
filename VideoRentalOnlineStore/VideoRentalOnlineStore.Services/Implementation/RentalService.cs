@@ -7,14 +7,13 @@ namespace VideoRentalOnlineStore.Services.Implementation
     public class RentalService : IRentalService
     {
         private readonly IRentalRepository _rentalRepository;
-        private readonly IRepository<Rental> _rentalRepositoryCRUD;
         private readonly IMovieService _movieService;
 
-        public RentalService(IRentalRepository rentalRepository, IMovieService movieService, IRepository<Rental> rentalRepositoryCRUD)
+        public RentalService( IMovieService movieService, IRentalRepository rentalRepository)
         {
-            _rentalRepository = rentalRepository;
+            //_rentalRepository = rentalRepository;
             _movieService = movieService;
-            _rentalRepositoryCRUD = rentalRepositoryCRUD;
+            _rentalRepository = rentalRepository;
         }
 
         public List<Rental> GetRentalByUserId(int userId)
@@ -30,7 +29,7 @@ namespace VideoRentalOnlineStore.Services.Implementation
                 throw new Exception("Movie is not available");
             };
 
-            _rentalRepositoryCRUD.Create(new Rental
+            _rentalRepository.Create(new Rental
             {
                 MovieId = movieId,
                 UserId = userId,
@@ -50,7 +49,7 @@ namespace VideoRentalOnlineStore.Services.Implementation
             }
 
             rental.ReturnedOn = DateTime.Now;
-            _rentalRepositoryCRUD.Update(rental);
+            _rentalRepository.Update(rental);
 
             _movieService.IncreaseQuantity(movieId);
         }

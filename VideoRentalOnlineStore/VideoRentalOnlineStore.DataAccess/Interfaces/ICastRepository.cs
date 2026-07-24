@@ -2,7 +2,7 @@
 
 namespace VideoRentalOnlineStore.DataAccess.Interfaces
 {
-    public interface ICastRepository
+    public interface ICastRepository : IRepository<Cast>
     {
         List<Cast> GetByMovieId(int movieId);
     }
